@@ -1,0 +1,22 @@
+﻿@model IEnumerable<JourneyPlanner.Models.Places>
+@{
+    ViewBag.Title = "Journey Plan Result";
+}
+<h3>Journey results</h3>
+@if(ViewBag.Message == null)
+{
+<table class="table" style="border:0px!important">
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceName)
+        </td>
+    </tr>
+}
+</table>
+}
+<p>@ViewBag.Message</p>
+<p>
+    @Html.ActionLink("Search again", "Index")
+</p>
